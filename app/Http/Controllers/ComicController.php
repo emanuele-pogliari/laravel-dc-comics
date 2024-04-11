@@ -13,7 +13,12 @@ class ComicController extends Controller
     public function index()
     {
         $comics = Comic::all();
-        return view('comic.index', compact('comics'));
+
+
+        $links = config("db.links");
+        $footerLinks = config("db.linkList");
+        $socials = config("db.socials");
+        return view('comic.index', compact('comics', 'links', 'footerLinks', 'socials', 'footerLinks'));
     }
 
     /**
@@ -21,7 +26,11 @@ class ComicController extends Controller
      */
     public function create()
     {
-        return view('comic.create');
+        $links = config("db.links");
+        $footerLinks = config("db.linkList");
+        $socials = config("db.socials");
+
+        return view('comic.create', compact('links', 'footerLinks', 'socials', 'footerLinks'));
     }
 
     /**

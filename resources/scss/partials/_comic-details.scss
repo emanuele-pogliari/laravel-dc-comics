@@ -1,0 +1,22 @@
+.blue-divider {
+    height: 80px;
+    background-color: $primaryColor;
+}
+
+.part1 {
+    height: 430px;
+
+    .desc-box {
+        padding: 80px 0;
+    }
+    .green-table {
+        background-color: #55ba59;
+        color: #bafd9c;
+    }
+}
+
+.part2 {
+    height: 380px;
+    background-color: rgb(219, 212, 212);
+    border-top: 1px solid rgb(103, 103, 103);
+}

@@ -1,0 +1,61 @@
+@use "./variables.scss" as *;
+
+.header {
+    margin: auto;
+}
+
+.jumbotron {
+    background-image: url("../img/jumbotron.jpg");
+    background-size: cover;
+    height: 400px;
+
+    .current-series {
+        position: absolute;
+
+        padding: 5px 30px;
+
+        left: 270px;
+
+        transform: translateY(-50%);
+
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 30px;
+        font-weight: 700;
+        text-transform: uppercase;
+        background-color: $primaryColor;
+    }
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    width: 70%;
+    align-items: center;
+
+    .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 20px;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-family: "Barlow Condensed", sans-serif;
+        margin-bottom: 0;
+
+        li {
+            padding-top: 50px;
+            padding-bottom: 50px;
+            list-style-type: none;
+
+            &.active {
+                padding-bottom: 45px;
+                border-bottom: 5px solid $primaryColor;
+            }
+        }
+    }
+
+    .img-logo {
+        width: 80px;
+    }
+}

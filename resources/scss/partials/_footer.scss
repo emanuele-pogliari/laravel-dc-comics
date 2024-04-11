@@ -1,0 +1,98 @@
+@use "./variables.scss" as *;
+footer {
+    .footer-top {
+        background-image: url("/resources/img/footer-bg.jpg");
+        background-position: cover;
+
+        overflow: hidden;
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            margin: auto;
+            width: 70%;
+            align-items: center;
+            height: 370px;
+        }
+
+        .links {
+            display: flex;
+            flex-flow: column wrap;
+            align-content: flex-start;
+            gap: 20px 30px;
+
+            height: 100%;
+
+            padding: 20px 0;
+
+            h3 {
+                text-transform: uppercase;
+                font-size: 1.5em;
+                font-family: "Barlow Condensed", sans-serif;
+                color: white;
+                margin-bottom: 10px;
+            }
+
+            ul {
+                color: #ccc;
+                font-size: 0.9em;
+                list-style-type: none;
+                padding: 0;
+            }
+        }
+    }
+}
+.copyright-container {
+    margin: auto;
+    width: 70%;
+    font-size: 0.9em;
+    color: #ccc;
+
+    span {
+        color: $primaryColor;
+    }
+}
+
+.subfooter-container {
+    position: relative;
+
+    margin: auto;
+    padding: 30px 0;
+
+    background-color: #303030;
+
+    .sub-footer {
+        display: flex;
+        justify-content: space-between;
+        margin: auto;
+        width: 70%;
+
+        .signup-btn {
+            padding: 17px;
+
+            border: 2px solid $primaryColor;
+            background-color: transparent;
+            color: white;
+            text-transform: uppercase;
+        }
+
+        .follow {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+
+            h4 {
+                text-transform: uppercase;
+                font-size: 1.5em;
+                font-family: "Barlow Condensed", sans-serif;
+                color: $primaryColor;
+                margin: 0;
+            }
+
+            .social {
+                display: flex;
+                gap: 15px;
+            }
+        }
+    }
+}
