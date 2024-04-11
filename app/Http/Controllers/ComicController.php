@@ -29,7 +29,26 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // creiamo una nuova pasta
+
+        // dd($request);
+
+        $newComic = new Comic();
+
+        $newComic->title = $request->title;
+        $newComic->description = $request->description;
+        $newComic->thumb = $request->thumb;
+        $newComic->price = $request->price;
+        $newComic->series = $request->series;
+        $newComic->sale_date = $request->sale_date;
+        $newComic->type = $request->type;
+        $newComic->artists = $request->artists;
+        $newComic->writers = $request->writers;
+
+        $newComic->save();
+
+        // spostiamo l'utente nella index
+        return redirect()->route('comics.index');
     }
 
     /**
