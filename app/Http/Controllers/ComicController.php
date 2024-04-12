@@ -18,7 +18,7 @@ class ComicController extends Controller
         $links = config("db.links");
         $footerLinks = config("db.linkList");
         $socials = config("db.socials");
-        return view('comic.index', compact('comics', 'links', 'footerLinks', 'socials', 'footerLinks'));
+        return view('comics.index', compact('comics', 'links', 'footerLinks', 'socials'));
     }
 
     /**
@@ -30,7 +30,7 @@ class ComicController extends Controller
         $footerLinks = config("db.linkList");
         $socials = config("db.socials");
 
-        return view('comic.create', compact('links', 'footerLinks', 'socials', 'footerLinks'));
+        return view('comics.create', compact('links', 'footerLinks', 'socials'));
     }
 
     /**
@@ -69,23 +69,40 @@ class ComicController extends Controller
         $footerLinks = config("db.linkList");
         $socials = config("db.socials");
 
-        return view('comic.show', compact('comic', 'links', 'footerLinks', 'socials'));
+        return view('comics.show', compact('comic', 'links', 'footerLinks', 'socials'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Comic $comic)
     {
-        //
+        $links = config("db.links");
+        $footerLinks = config("db.linkList");
+        $socials = config("db.socials");
+
+        return view('comics.edit', compact('comic', 'links', 'footerLinks', 'socials'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Comic $comic)
     {
-        //
+        $comic->title = $request->title;
+        $comic->description = $request->description;
+        $comic->thumb = $request->thumb;
+        $comic->price = $request->price;
+        $comic->series = $request->series;
+        $comic->sale_date = $request->sale_date;
+        $comic->type = $request->type;
+        $comic->artists = $request->artists;
+        $comic->writers = $request->writers;
+
+        $comic->save();
+
+        // spostiamo l'utente nella index
+        return redirect()->route('comics.index');
     }
 
     /**
