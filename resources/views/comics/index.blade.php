@@ -13,8 +13,8 @@
         <div class="col-12 col-md-6 col-lg-2 px-4 mb-5">
         <a class="text-white text-decoration-none my-link d-inline-block "href="{{route('comics.show', $comic->id)}}">
                 <div class="comic">
-                    <img class="mb-3 img-fluid" src="{{$comic['thumb']}}" alt="{{$comic['series']}}">
-                    <h4>{{ $comic['series'] }}</h4>
+                    <img class="mb-3 img-fluid" src="{{$comic->thumb}}" alt="{{$comic->title}}">
+                    <h4>{{ $comic->title }}</h4>
                 </div>
             </a>
         </div>
