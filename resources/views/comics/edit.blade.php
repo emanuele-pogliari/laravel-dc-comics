@@ -56,7 +56,7 @@
       </div>
     
       <div class="btn-box text-center mt-5">
-      <button type="submit" class="add-comic">Add Comic</button>
+      <button type="submit" class="add-comic">Save Changes</button>
     </div>
     
     </form>

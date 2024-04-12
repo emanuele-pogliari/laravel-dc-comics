@@ -26,6 +26,7 @@
             </div>
         </div>
         
+            <a href="{{route('comics.edit', $comic->id)}}" class="btn btn-primary">edit</a>
     </div>
 </div>
 <div class="part2">
