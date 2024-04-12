@@ -65,7 +65,11 @@ class ComicController extends Controller
      */
     public function show(Comic $comic)
     {
-        return view('comic.show', compact('comic'));
+        $links = config("db.links");
+        $footerLinks = config("db.linkList");
+        $socials = config("db.socials");
+
+        return view('comic.show', compact('comic', 'links', 'footerLinks', 'socials'));
     }
 
     /**

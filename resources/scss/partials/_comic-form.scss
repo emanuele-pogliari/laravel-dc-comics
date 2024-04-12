@@ -1,0 +1,20 @@
+@use "./variables.scss" as *;
+
+section {
+    background-color: $secondaryColor;
+    color: white;
+    font-family: "Barlow Condensed", sans-serif;
+    text-transform: uppercase;
+}
+
+form .add-comic {
+    justify-self: center;
+
+    padding: 17px 60px;
+    background-color: $primaryColor;
+    border: 0;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+}

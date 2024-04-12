@@ -24,7 +24,8 @@
         </div>
     </div>
         <div class="text-center">
-        <button class="load-btn">Load More</button> 
+            <a href="{{route('comics.create')}}"><button class="load-btn">Add Comic</button> </a>
+        
     </div> 
     </div>
     <div class="ecommerce-container">

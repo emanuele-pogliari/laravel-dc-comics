@@ -1,6 +1,9 @@
 @extends('layouts/app')
 @section('content')
-<form action="{{route('comics.store')}}" method="POST">
+<section>
+<div class="container p-5">
+  <h2>Add your comic by filling out the form below</h2>
+<form class="my-5" action="{{route('comics.store')}}" method="POST">
   @csrf
 
   <div class="mb-3">
@@ -48,9 +51,11 @@
     <input type="text" class="form-control" id="writers" name="writers">
   </div>
 
-  <button type="submit" class="btn btn-primary">Salva</button>
+  <div class="btn-box text-center mt-5">
+  <button type="submit" class="add-comic">Add Comic</button>
+</div>
 
 </form>
 </div>
-
+</section>
 @endsection

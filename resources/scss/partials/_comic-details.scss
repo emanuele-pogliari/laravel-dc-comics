@@ -1,3 +1,4 @@
+@use "/resources/scss/partials/variables" as *;
 .blue-divider {
     height: 80px;
     background-color: $primaryColor;
@@ -12,6 +13,11 @@
     .green-table {
         background-color: #55ba59;
         color: #bafd9c;
+    }
+    .comic-img {
+        position: absolute;
+        width: 200px;
+        transform: translateY(-250px);
     }
 }
 
