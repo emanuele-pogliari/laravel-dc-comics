@@ -83,7 +83,7 @@
 
   <div class="mb-3">
     <label for="writers" class="form-label">Writers</label>
-    <input type="text text-black" class="form-control @error('writers') is-invalid @enderror id="writers" name="writers" value="{{old('writers')}}">
+    <input type="text text-black" class="form-control @error('writers') is-invalid @enderror" id="writers" name="writers" value="{{old('writers')}}">
     @error('writers')
           <div class="invalid-feedback">
               {{$message}}
