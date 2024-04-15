@@ -17,7 +17,7 @@
     
       <div class="mb-3">
           <label for="description" class="form-label">Description</label>
-          <textarea type="text" class="form-control" id="description" name="description" value="{{$comic->description}}"></textarea>
+          <textarea type="text" class="form-control" id="description" name="description">{{$comic->description}}</textarea>
       </div>
     
       <div class="mb-3">
