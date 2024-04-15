@@ -39,9 +39,9 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
-        // creiamo una nuova pasta
 
-        // dd($request);
+        // this will call the validation function
+        $this->validation($request->all());
 
         $newComic = new Comic();
 
@@ -57,7 +57,6 @@ class ComicController extends Controller
 
         $newComic->save();
 
-        // spostiamo l'utente nella index
         return redirect()->route('comics.index');
     }
 
@@ -102,7 +101,6 @@ class ComicController extends Controller
 
         $comic->save();
 
-        // spostiamo l'utente nella index
         return redirect()->route('comics.index');
     }
 
