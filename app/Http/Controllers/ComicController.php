@@ -89,6 +89,9 @@ class ComicController extends Controller
      */
     public function update(Request $request, Comic $comic)
     {
+
+        $this->validation($request->all());
+
         $comic->title = $request->title;
         $comic->description = $request->description;
         $comic->thumb = $request->thumb;
@@ -101,7 +104,7 @@ class ComicController extends Controller
 
         $comic->save();
 
-        return redirect()->route('comics.index');
+        return redirect()->route('comics.show', $comic->id);
     }
 
     /**
@@ -124,6 +127,8 @@ class ComicController extends Controller
             'series' => 'required|max:70',
             'sale_date' => 'date',
             'type' => 'max:30',
+            'artist' => 'max:500',
+            'writers' => 'max:500',
         ], [
             'max' => "Il campo :attribute deve avere massimo :max caratteri",
             'required' => "Il campo :attribute deve essere inserito",
