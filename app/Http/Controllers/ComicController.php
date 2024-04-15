@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Comic;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class ComicController extends Controller
 {
@@ -112,5 +113,19 @@ class ComicController extends Controller
     {
         $comic->delete();
         return redirect()->route('comics.index');
+    }
+
+
+    private function validation($data)
+    {
+        $validator = Validator::make($data, [
+            'title' => 'required|max:50',
+            'description' => 'max:2000',
+            'thumb' => 'nullable',
+            'price' => 'required',
+            'series' => 'required|max:70',
+            'sale_date' => 'date',
+            'type' => 'max:30',
+        ])->validate();
     }
 }
