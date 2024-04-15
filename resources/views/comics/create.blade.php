@@ -28,7 +28,7 @@
 
   <div class="mb-3">
       <label for="thumb" class="form-label">Thumb</label>
-      <input type="text" class="form-control @error('thumb') is-invalid @enderror" id="thumb" name="thumb" value="{{old('thumb')}}">
+      <input type="text" class="form-control" id="thumb" name="thumb" value="{{old('thumb')}}">
   </div>
 
   <div class="mb-3">
@@ -91,20 +91,9 @@
       @enderror
   </div>
 
-@if($errors->any())
-<div class="alert alert-warning">
-  <ul>
-    @foreach($errors->all() as $error)
-    <li>{{$error}}</li>
-    @endforeach
-  </ul>
-</div>
-@endif
-
-  <div class="btn-box text-center mt-5">
-  <button type="submit" class="add-comic">Add Comic</button>
-</div>
-
+    <div class="btn-box text-center mt-5">
+        <button type="submit" class="add-comic">Add Comic</button>
+    </div>
 </form>
 </div>
 </section>

@@ -10,7 +10,7 @@
         <div class="content">
             <div class="row justify-content-between  ">
         @foreach($comics as $comic)
-        <div class="col-12 col-md-6 col-lg-2 px-4 mb-5">
+        <div class="col-12 col-md-6 col-lg-2 px-4 mb-5 d-flex justify-content-center ">
         <a class="text-white text-decoration-none my-link d-inline-block "href="{{route('comics.show', $comic->id)}}">
                 <div class="comic">
                     <img class="mb-3 img-fluid" src="{{$comic->thumb}}" alt="{{$comic->title}}">
