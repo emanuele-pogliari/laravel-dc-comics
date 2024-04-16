@@ -23,14 +23,14 @@ class StoreComicRequest extends FormRequest
     {
         return [
             'title' => 'required|max:50',
-            'description' => 'max:2000',
+            'description' => 'nullable|max:2000',
             'thumb' => 'nullable',
             'price' => 'required',
             'series' => 'required|max:70',
-            'sale_date' => 'date',
-            'type' => 'max:30',
-            'artist' => 'max:500',
-            'writers' => 'max:500',
+            'sale_date' => 'required|date',
+            'type' => 'required|max:30',
+            'artist' => 'required|max:500',
+            'writers' => 'required|max:500',
         ];
     }
 
