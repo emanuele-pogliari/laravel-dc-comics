@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreComicRequest;
 use App\Models\Comic;
+use Illuminate\Contracts\Cache\Store;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -37,11 +39,13 @@ class ComicController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreComicRequest $request)
     {
 
         // this will call the validation function
-        $this->validation($request->all());
+        // $this->validation($request->all());
+
+        $request->validated();
 
         $newComic = new Comic();
 
@@ -87,10 +91,10 @@ class ComicController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Comic $comic)
+    public function update(StoreComicRequest $request, Comic $comic)
     {
 
-        $this->validation($request->all());
+        $request->validated();
 
         $comic->title = $request->title;
         $comic->description = $request->description;
@@ -114,26 +118,5 @@ class ComicController extends Controller
     {
         $comic->delete();
         return redirect()->route('comics.index');
-    }
-
-
-    private function validation($data)
-    {
-        $validator = Validator::make($data, [
-            'title' => 'required|max:50',
-            'description' => 'max:2000',
-            'thumb' => 'nullable',
-            'price' => 'required',
-            'series' => 'required|max:70',
-            'sale_date' => 'date',
-            'type' => 'max:30',
-            'artist' => 'max:500',
-            'writers' => 'max:500',
-        ], [
-            'max' => "Il campo :attribute deve avere massimo :max caratteri",
-            'required' => "Il campo :attribute deve essere inserito",
-            'date' => "Il campo :attribute deve essere in questo formato: YYYY-MM-DD",
-
-        ])->validate();
     }
 }
